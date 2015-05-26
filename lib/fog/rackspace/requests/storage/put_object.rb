@@ -29,7 +29,7 @@ module Fog
             :idempotent => !params[:request_block],
             :headers    => headers,
             :method     => 'PUT',
-            :path       => "#{Fog::Rackspace.escape(container)}/#{Fog::Rackspace.escape(object)}"
+            :path       => "#{Fog::Rackspace.escape(container)}/#{Fog::Rackspace.escape(object)}".gsub('%2F','/')
           )
 
           request(params)
