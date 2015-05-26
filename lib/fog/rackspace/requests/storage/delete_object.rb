@@ -15,7 +15,7 @@ module Fog
           request(
             :expects  => 204,
             :method   => 'DELETE',
-            :path     => "#{Fog::Rackspace.escape(container)}/#{Fog::Rackspace.escape(object)}"
+            :path     => "#{Fog::Rackspace.escape(container)}/#{Fog::Rackspace.escape(object)}".gsub('%2F','/')
           )
         end
       end
